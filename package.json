@@ -1,14 +1,13 @@
 {
   "name": "effect-app-example",
   "version": "1.0.0",
-  "description": "Effect TypeScript HTTP API example with atrim auto-instrumentation",
+  "description": "Effect TypeScript HTTP API example",
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
     "prepare": "effect-language-service patch",
     "build": "tsc",
     "dev": "tsc --watch",
-    "start": "node dist/index.js",
     "typecheck": "tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

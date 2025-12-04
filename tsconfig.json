@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    // Build Performance
+    "incremental": true,
+    "composite": true,
+
+    // Module System
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleDetection": "force",
+
+    // Import Handling
+    "verbatimModuleSyntax": true,
+    "rewriteRelativeImportExtensions": true,
+
+    // Type Safety
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitOverride": true,
+
+    // Development
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+
+    // Output
+    "outDir": "./dist",
+    "rootDir": "./src",
+
+    // Effect Language Service
+    "plugins": [
+      {
+        "name": "@effect/language-service"
+      }
+    ]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "effect-app-example",
+  "version": "1.0.0",
+  "description": "Effect TypeScript HTTP API example",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "effect-language-service patch",
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.23.0",
+  "devDependencies": {
+    "@effect/language-service": "^0.59.0",
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@effect/platform": "^0.93.6",
+    "@effect/platform-node": "^0.103.0",
+    "effect": "^3.19.8"
+  }
+}

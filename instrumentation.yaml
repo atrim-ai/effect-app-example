@@ -1,5 +1,6 @@
 # @atrim/instrument-node configuration
 # Auto-instrumentation for Effect-TS applications
+# TEST: This comment was added to verify refresh works
 version: "1.0"
 
 # Service metadata

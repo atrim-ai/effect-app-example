@@ -1,3 +1,6 @@
+// Load environment variables for OTLP configuration
+import "dotenv/config"
+
 import { HttpRouter, HttpServer, HttpServerResponse } from "@effect/platform"
 import { NodeHttpServer, NodeRuntime } from "@effect/platform-node"
 import { Layer } from "effect"
@@ -20,4 +23,6 @@ const HttpLive = router.pipe(
 )
 
 // Run the server
+// Note: @atrim/instrument-node is loaded via --import flag in package.json start script
+// This automatically instruments all Effect operations with OpenTelemetry
 NodeRuntime.runMain(Layer.launch(HttpLive))

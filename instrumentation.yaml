@@ -1,0 +1,32 @@
+# @atrim/instrument-node configuration
+# Auto-instrumentation for Effect-TS applications
+version: "1.0"
+
+# Service metadata
+service:
+  name: effect-app-example
+  version: "1.0.0"
+
+# OpenTelemetry exporter configuration
+# Uses environment variables: OTEL_EXPORTER_OTLP_ENDPOINT, OTEL_EXPORTER_OTLP_HEADERS
+exporter:
+  type: otlp-http
+  # endpoint: ${OTEL_EXPORTER_OTLP_ENDPOINT:-http://localhost:4318}
+
+# Patterns to instrument
+patterns:
+  enabled:
+    - "effect.*"           # All Effect operations
+    - "http.*"             # HTTP requests/responses
+    - "HttpRouter.*"       # Effect HTTP Router
+    - "HttpServer.*"       # Effect HTTP Server
+
+  ignored:
+    - "/health"            # Health check endpoint
+    - "/metrics"           # Metrics endpoint
+    - "internal.*"         # Internal operations
+
+# Effect-specific settings
+effect:
+  extractMetadata: true    # Extract Effect metadata into span attributes
+  captureErrors: true      # Capture Effect errors as span events

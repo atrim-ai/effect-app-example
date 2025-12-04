@@ -1,13 +1,14 @@
 {
   "name": "effect-app-example",
   "version": "1.0.0",
-  "description": "Effect TypeScript HTTP API example",
+  "description": "Effect TypeScript HTTP API example with atrim auto-instrumentation",
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
     "prepare": "effect-language-service patch",
     "build": "tsc",
     "dev": "tsc --watch",
+    "start": "node --import @atrim/instrument-node/register dist/index.js",
     "typecheck": "tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,8 +22,14 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "@atrim/instrument-node": "^0.5.0",
+    "@effect/opentelemetry": "^0.59.0",
     "@effect/platform": "^0.93.6",
     "@effect/platform-node": "^0.103.0",
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.57.0",
+    "@opentelemetry/sdk-trace-node": "^1.30.0",
+    "dotenv": "^16.4.5",
     "effect": "^3.19.8"
   }
 }

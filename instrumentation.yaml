@@ -7,9 +7,15 @@ service:
   name: effect-app-example
   version: "1.0.0"
 
-# OpenTelemetry exporter (uses default endpoint http://localhost:4318)
+# OpenTelemetry exporter configuration
+# Clean YAML config instead of environment variables
 exporter:
   type: otlp-http
+  endpoint: http://localhost:4318
+  # Optional: Add custom headers for authentication
+  # headers:
+  #   Authorization: Bearer YOUR_TOKEN
+  #   X-Custom-Header: value
 
 # Patterns to instrument
 patterns:

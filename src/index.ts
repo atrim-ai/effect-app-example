@@ -10,7 +10,7 @@ const router = HttpRouter.empty.pipe(
 )
 
 // Create the HTTP server layer
-const ServerLive = NodeHttpServer.layer(createServer, { port: 3000 })
+const ServerLive = NodeHttpServer.layer(createServer, { port: 0 })
 
 // Compose the application
 const HttpLive = router.pipe(

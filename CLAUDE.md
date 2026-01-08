@@ -113,13 +113,17 @@ dist/          # Compiled JavaScript output
 - `@effect/opentelemetry`: Effect-OTel integration
 - `@opentelemetry/api`: OTel API
 - `@opentelemetry/sdk-trace-base`: OTel SDK trace
+- `@opentelemetry/sdk-trace-node`: OTel Node.js tracer provider
+- `@opentelemetry/sdk-trace-web`: OTel Web tracer (peer dependency)
 - `@opentelemetry/resources`: OTel resources
 - `@opentelemetry/semantic-conventions`: OTel semantic conventions
 - `@opentelemetry/exporter-trace-otlp-http`: OTLP exporter
 - `dotenv`: Environment variable loading
 
 **atrim-instrumented adds:**
-- `@atrim/instrument-node`: Atrim instrumentation (bundles OTel SDK and Effect integration)
+- `@atrim/instrument-node`: Atrim instrumentation
+- `@effect/opentelemetry`: Effect-OTel integration (peer dependency)
+- `@opentelemetry/api`: OTel API (peer dependency)
 
 <!-- effect-solutions:start -->
 ## Effect Solutions Usage

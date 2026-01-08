@@ -1,8 +1,17 @@
+import { initializeInstrumentation } from "@atrim/instrument-node"
+
+await initializeInstrumentation({
+  serviceName: "effect-app-example",
+  serviceVersion: "1.0.0",
+  otlp: {
+    endpoint: process.env.OTEL_EXPORTER_OTLP_ENDPOINT || "http://localhost:4318"
+  }
+})
+
 import { HttpRouter, HttpServer, HttpServerResponse } from "@effect/platform"
 import { NodeHttpServer, NodeRuntime } from "@effect/platform-node"
-import { Effect, Layer } from "effect"
+import { Layer } from "effect"
 import { createServer } from "node:http"
-import { EffectInstrumentationLive } from "@atrim/instrument-node/effect"
 
 // Define routes
 const router = HttpRouter.empty.pipe(
@@ -20,12 +29,5 @@ const HttpLive = router.pipe(
   Layer.provide(ServerLive),
 )
 
-// Run with instrumentation
-const program = Effect.gen(function* () {
-  yield* Effect.log("Starting Effect HTTP server with auto-instrumentation")
-  return yield* Effect.never
-}).pipe(
-  Effect.provide(Layer.merge(HttpLive, EffectInstrumentationLive))
-)
-
-NodeRuntime.runMain(program)
+// Run the server
+NodeRuntime.runMain(Layer.launch(HttpLive))

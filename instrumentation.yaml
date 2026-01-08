@@ -1,35 +1,21 @@
-# @atrim/instrument-node configuration
-# Auto-instrumentation for Effect-TS applications
 version: "1.0"
 
-# Service metadata
-service:
-  name: effect-app-example
-  version: "1.0.0"
+instrumentation:
+  enabled: true
+  logging: "on"
 
-# OpenTelemetry exporter configuration
-# Clean YAML config instead of environment variables
-exporter:
-  type: otlp-http
-  endpoint: http://localhost:4318
-  # Optional: Add custom headers for authentication
-  # headers:
-  #   Authorization: Bearer YOUR_TOKEN
-  #   X-Custom-Header: value
+  instrument_patterns:
+    - pattern: ".*"
+      enabled: true
 
-# Patterns to instrument
-patterns:
-  enabled:
-    - "effect.*"           # All Effect operations
-    - "http.*"             # HTTP requests/responses
-    - "HttpRouter.*"       # Effect HTTP Router
-    - "HttpServer.*"       # Effect HTTP Server
+  ignore_patterns:
+    - pattern: "^health"
 
-  ignored:
-    - "/health"            # Health check endpoint
-    - "/metrics"           # Metrics endpoint
+  http_filtering:
+    enabled: true
+    ignore_routes:
+      - pattern: "^/health$"
+      - pattern: "^/metrics$"
 
-# Effect-specific settings
 effect:
-  extractMetadata: true    # Extract Effect metadata into span attributes
-  captureErrors: true      # Capture Effect errors as span events
+  auto_extract_metadata: true

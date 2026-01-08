@@ -1,5 +1,19 @@
 version: "1.0"
 
+# Service metadata
+# service:
+#   name: effect-app-example
+#   version: "1.0.0"
+
+# OpenTelemetry exporter configuration
+# Clean YAML config instead of environment variables
+# exporter:
+#   type: otlp-http
+#   endpoint: http://localhost:4318
+#   # Optional: Add custom headers for authentication
+#   headers:
+#     x-api-key: atrim_key_182d6b4ef49918d3341828298950ebb8
+
 instrumentation:
   enabled: true
   logging: "on"

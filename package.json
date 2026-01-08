@@ -21,7 +21,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@atrim/instrument-node": "0.7.0",
+    "@atrim/instrument-node": "0.7.1-dev.14fdea7.20260108224013",
     "@effect/opentelemetry": "^0.60.0",
     "@effect/platform": "^0.94.1",
     "@effect/platform-node": "^0.104.0",

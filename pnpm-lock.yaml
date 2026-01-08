@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@atrim/instrument-node':
-        specifier: 0.7.0
-        version: 0.7.0(c05c7ac9856b58b896a3adddae870723)
+        specifier: 0.7.1-dev.14fdea7.20260108224013
+        version: 0.7.1-dev.14fdea7.20260108224013(c05c7ac9856b58b896a3adddae870723)
       '@effect/opentelemetry':
         specifier: ^0.60.0
         version: 0.60.0(@effect/platform@0.94.1(effect@3.19.14))(@opentelemetry/api@1.9.0)(@opentelemetry/resources@2.3.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-logs@0.208.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-metrics@2.2.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.3.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-node@2.3.0(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.38.0)(effect@3.19.14)
@@ -39,8 +39,8 @@ importers:
 
 packages:
 
-  '@atrim/instrument-node@0.7.0':
-    resolution: {integrity: sha512-hEXnFiYcgmELDjabklEJXBq3vw8VFve7x9hoT2dHIaQ0T9tb4mtHpGh+oiLiQnbhxRFpm2Fy+JtcriO3MP/FsA==}
+  '@atrim/instrument-node@0.7.1-dev.14fdea7.20260108224013':
+    resolution: {integrity: sha512-R6DVkJu3VH2iBDLtlyO2hlZqRIGoDWvD+aVe3UNLYpGpRrHB5yLZmM48ttYva6W7CGTRfTibRXR4J2Na5awO3A==}
     engines: {bun: '>=1.0.0', node: '>=20.0.0'}
     peerDependencies:
       '@effect/opentelemetry': '>=0.40.0'
@@ -1142,7 +1142,7 @@ packages:
 
 snapshots:
 
-  '@atrim/instrument-node@0.7.0(c05c7ac9856b58b896a3adddae870723)':
+  '@atrim/instrument-node@0.7.1-dev.14fdea7.20260108224013(c05c7ac9856b58b896a3adddae870723)':
     dependencies:
       '@opentelemetry/api': 1.9.0
       '@opentelemetry/auto-instrumentations-node': 0.67.3(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.3.0(@opentelemetry/api@1.9.0))

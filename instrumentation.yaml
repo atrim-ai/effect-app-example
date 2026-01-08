@@ -1,19 +1,5 @@
 version: "1.0"
 
-# Service metadata
-# service:
-#   name: effect-app-example
-#   version: "1.0.0"
-
-# OpenTelemetry exporter configuration
-# Clean YAML config instead of environment variables
-# exporter:
-#   type: otlp-http
-#   endpoint: http://localhost:4318
-#   # Optional: Add custom headers for authentication
-#   headers:
-#     x-api-key: atrim_key_182d6b4ef49918d3341828298950ebb8
-
 instrumentation:
   enabled: true
   logging: "on"
@@ -33,3 +19,30 @@ instrumentation:
 
 effect:
   auto_extract_metadata: true
+  auto_instrumentation:
+    enabled: true
+    granularity: fiber
+    span_naming:
+      default: "effect-app-example.{function}"
+      infer_from_source: true
+      rules: []
+    filter:
+      include: []
+      exclude: []
+    performance:
+      sampling_rate: 1.0
+      min_duration: "0ms"
+      max_concurrent: 0
+    metadata:
+      fiber_info: true
+      source_location: true
+      parent_fiber: true
+  exporter_config:
+    type: otlp                   
+    endpoint: "http://localhost:4319"
+    headers:
+      x-api-key: atrim_internal_tenant_000000000002
+      
+    # Uncomment next lines for console debugging for exporter
+    # type: console                 # Use console exporter for development
+    # processor: simple             # Immediate export for debugging

@@ -23,10 +23,9 @@ const HttpLive = router.pipe(
 // Run with instrumentation
 const program = Effect.gen(function* () {
   yield* Effect.log("Starting Effect HTTP server with auto-instrumentation")
-  yield* Effect.never
+  return yield* Effect.never
 }).pipe(
-  Effect.provide(HttpLive),
-  Effect.provide(EffectInstrumentationLive) // Add instrumentation
+  Effect.provide(Layer.merge(HttpLive, EffectInstrumentationLive))
 )
 
 NodeRuntime.runMain(program)

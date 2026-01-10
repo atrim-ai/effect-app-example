@@ -11,7 +11,7 @@ const router = HttpRouter.empty.pipe(
 )
 
 // Create the HTTP server layer
-const ServerLive = NodeHttpServer.layer(createServer, { port: 3000 })
+const ServerLive = NodeHttpServer.layer(createServer, { port: 3456 })
 
 // Compose the application
 const HttpLive = router.pipe(
@@ -23,10 +23,9 @@ const HttpLive = router.pipe(
 // Run with instrumentation
 const program = Effect.gen(function* () {
   yield* Effect.log("Starting Effect HTTP server with auto-instrumentation")
-  yield* Effect.never
+  return yield* Effect.never
 }).pipe(
-  Effect.provide(HttpLive),
-  Effect.provide(EffectInstrumentationLive) // Add instrumentation
+  Effect.provide(Layer.mergeAll(HttpLive, EffectInstrumentationLive)) // Add instrumentation
 )
 
 NodeRuntime.runMain(program)

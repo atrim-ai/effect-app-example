@@ -8,6 +8,7 @@
     "prepare": "effect-language-service patch",
     "build": "tsc",
     "dev": "tsc --watch",
+    "start": "node dist/index.js",
     "typecheck": "tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,6 +23,7 @@
   },
   "dependencies": {
     "@atrim/instrument-node": "^0.5.0",
+    "@effect/opentelemetry": "^0.60.0",
     "@effect/platform": "^0.93.6",
     "@effect/platform-node": "^0.103.0",
     "effect": "^3.19.8"

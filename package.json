@@ -23,8 +23,9 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "@atrim/instrument-node": "0.8.0-054e7f6-20260117002843",
     "@effect/platform": "^0.94.1",
     "@effect/platform-node": "^0.104.0",
-    "effect": "^3.15.2"
+    "effect": "npm:@clayroach/effect@3.19.14-source-capture.7"
   }
 }

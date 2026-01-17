@@ -40,7 +40,9 @@ effect:
 
   exporter_config:
     type: otlp
-    endpoint: "http://localhost:4319"
+    # BUG TEST: This endpoint should be used but is being ignored
+    # The library defaults to http://localhost:4318 instead
+    endpoint: "http://localhost:9999"
     processor: simple
     headers:
-      x-api-key: atrim_internal_tenant_000000000002
+      x-api-key: test_key_from_yaml

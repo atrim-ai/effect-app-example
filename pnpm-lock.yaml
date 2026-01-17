@@ -10,13 +10,19 @@ importers:
     dependencies:
       '@atrim/instrument-node':
         specifier: 0.8.0-054e7f6-20260117002843
-        version: 0.8.0-054e7f6-20260117002843(@clayroach/effect@3.19.14-source-capture.7)(@effect/platform-node@0.104.0(15231785c093f7bb9cf1bf42ecaae93d))(@effect/platform@0.94.1(@clayroach/effect@3.19.14-source-capture.7))(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.4.0(@opentelemetry/api@1.9.0))
+        version: 0.8.0-054e7f6-20260117002843(@clayroach/effect@3.19.14-source-capture.7)(@effect/opentelemetry@0.60.0(@clayroach/effect@3.19.14-source-capture.7)(@effect/platform@0.94.1(@clayroach/effect@3.19.14-source-capture.7))(@opentelemetry/api@1.9.0)(@opentelemetry/resources@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-logs@0.208.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-metrics@2.2.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-node@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-web@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0))(@effect/platform-node@0.104.0(15231785c093f7bb9cf1bf42ecaae93d))(@effect/platform@0.94.1(@clayroach/effect@3.19.14-source-capture.7))(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.4.0(@opentelemetry/api@1.9.0))
+      '@effect/opentelemetry':
+        specifier: ^0.60.0
+        version: 0.60.0(@clayroach/effect@3.19.14-source-capture.7)(@effect/platform@0.94.1(@clayroach/effect@3.19.14-source-capture.7))(@opentelemetry/api@1.9.0)(@opentelemetry/resources@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-logs@0.208.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-metrics@2.2.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-node@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-web@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0)
       '@effect/platform':
         specifier: ^0.94.1
         version: 0.94.1(@clayroach/effect@3.19.14-source-capture.7)
       '@effect/platform-node':
         specifier: ^0.104.0
         version: 0.104.0(15231785c093f7bb9cf1bf42ecaae93d)
+      '@opentelemetry/api':
+        specifier: ^1.9.0
+        version: 1.9.0
       effect:
         specifier: npm:@clayroach/effect@3.19.14-source-capture.7
         version: '@clayroach/effect@3.19.14-source-capture.7'
@@ -83,6 +89,35 @@ packages:
   '@effect/language-service@0.64.1':
     resolution: {integrity: sha512-1S7Xr2t9mygR6QyiIdCQUvPwSvcf5EBpnWmKa/8rC4P0btFfw/RiWRI8bvFI2AW+U4KStMUHYxPu4QEsk4y8bg==}
     hasBin: true
+
+  '@effect/opentelemetry@0.60.0':
+    resolution: {integrity: sha512-YaKCKdtvzQ+efMCSg7f9583zxQU1TSyPSiTn4D8tnd/+okxuYrz2/RKbb+7qAUT1cajV6UIcdX/1lSLJi8uIew==}
+    peerDependencies:
+      '@effect/platform': ^0.94.0
+      '@opentelemetry/api': ^1.9
+      '@opentelemetry/resources': ^2.0.0
+      '@opentelemetry/sdk-logs': '>=0.203.0 <0.300.0'
+      '@opentelemetry/sdk-metrics': ^2.0.0
+      '@opentelemetry/sdk-trace-base': ^2.0.0
+      '@opentelemetry/sdk-trace-node': ^2.0.0
+      '@opentelemetry/sdk-trace-web': ^2.0.0
+      '@opentelemetry/semantic-conventions': ^1.33.0
+      effect: ^3.19.13
+    peerDependenciesMeta:
+      '@opentelemetry/api':
+        optional: true
+      '@opentelemetry/resources':
+        optional: true
+      '@opentelemetry/sdk-logs':
+        optional: true
+      '@opentelemetry/sdk-metrics':
+        optional: true
+      '@opentelemetry/sdk-trace-base':
+        optional: true
+      '@opentelemetry/sdk-trace-node':
+        optional: true
+      '@opentelemetry/sdk-trace-web':
+        optional: true
 
   '@effect/platform-node-shared@0.57.0':
     resolution: {integrity: sha512-QXuvmLNlABCQLcTl+lN1YPhKosR6KqArPYjC2reU0fb5lroCo3YRb/aGpXIgLthHzQL8cLU5XMGA3Cu5hKY2Tw==}
@@ -1293,7 +1328,7 @@ packages:
 
 snapshots:
 
-  '@atrim/instrument-node@0.8.0-054e7f6-20260117002843(@clayroach/effect@3.19.14-source-capture.7)(@effect/platform-node@0.104.0(15231785c093f7bb9cf1bf42ecaae93d))(@effect/platform@0.94.1(@clayroach/effect@3.19.14-source-capture.7))(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.4.0(@opentelemetry/api@1.9.0))':
+  '@atrim/instrument-node@0.8.0-054e7f6-20260117002843(@clayroach/effect@3.19.14-source-capture.7)(@effect/opentelemetry@0.60.0(@clayroach/effect@3.19.14-source-capture.7)(@effect/platform@0.94.1(@clayroach/effect@3.19.14-source-capture.7))(@opentelemetry/api@1.9.0)(@opentelemetry/resources@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-logs@0.208.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-metrics@2.2.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-node@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-web@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0))(@effect/platform-node@0.104.0(15231785c093f7bb9cf1bf42ecaae93d))(@effect/platform@0.94.1(@clayroach/effect@3.19.14-source-capture.7))(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.4.0(@opentelemetry/api@1.9.0))':
     dependencies:
       '@opentelemetry/api': 1.9.0
       '@opentelemetry/auto-instrumentations-node': 0.67.3(@opentelemetry/api@1.9.0)(@opentelemetry/core@2.4.0(@opentelemetry/api@1.9.0))
@@ -1308,6 +1343,7 @@ snapshots:
       yaml: 2.8.2
       zod: 3.25.76
     optionalDependencies:
+      '@effect/opentelemetry': 0.60.0(@clayroach/effect@3.19.14-source-capture.7)(@effect/platform@0.94.1(@clayroach/effect@3.19.14-source-capture.7))(@opentelemetry/api@1.9.0)(@opentelemetry/resources@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-logs@0.208.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-metrics@2.2.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-node@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-web@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0)
       '@effect/platform': 0.94.1(@clayroach/effect@3.19.14-source-capture.7)
       '@effect/platform-node': 0.104.0(15231785c093f7bb9cf1bf42ecaae93d)
       effect: '@clayroach/effect@3.19.14-source-capture.7'
@@ -1337,6 +1373,20 @@ snapshots:
       uuid: 11.1.0
 
   '@effect/language-service@0.64.1': {}
+
+  '@effect/opentelemetry@0.60.0(@clayroach/effect@3.19.14-source-capture.7)(@effect/platform@0.94.1(@clayroach/effect@3.19.14-source-capture.7))(@opentelemetry/api@1.9.0)(@opentelemetry/resources@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-logs@0.208.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-metrics@2.2.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-node@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-web@2.4.0(@opentelemetry/api@1.9.0))(@opentelemetry/semantic-conventions@1.39.0)':
+    dependencies:
+      '@effect/platform': 0.94.1(@clayroach/effect@3.19.14-source-capture.7)
+      '@opentelemetry/semantic-conventions': 1.39.0
+      effect: '@clayroach/effect@3.19.14-source-capture.7'
+    optionalDependencies:
+      '@opentelemetry/api': 1.9.0
+      '@opentelemetry/resources': 2.4.0(@opentelemetry/api@1.9.0)
+      '@opentelemetry/sdk-logs': 0.208.0(@opentelemetry/api@1.9.0)
+      '@opentelemetry/sdk-metrics': 2.2.0(@opentelemetry/api@1.9.0)
+      '@opentelemetry/sdk-trace-base': 2.4.0(@opentelemetry/api@1.9.0)
+      '@opentelemetry/sdk-trace-node': 2.4.0(@opentelemetry/api@1.9.0)
+      '@opentelemetry/sdk-trace-web': 2.4.0(@opentelemetry/api@1.9.0)
 
   '@effect/platform-node-shared@0.57.0(15231785c093f7bb9cf1bf42ecaae93d)':
     dependencies:

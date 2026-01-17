@@ -24,8 +24,10 @@
   },
   "dependencies": {
     "@atrim/instrument-node": "0.8.0-054e7f6-20260117002843",
+    "@effect/opentelemetry": "^0.60.0",
     "@effect/platform": "^0.94.1",
     "@effect/platform-node": "^0.104.0",
+    "@opentelemetry/api": "^1.9.0",
     "effect": "npm:@clayroach/effect@3.19.14-source-capture.7"
   }
 }

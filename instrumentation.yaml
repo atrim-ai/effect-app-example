@@ -4,6 +4,12 @@ instrumentation:
   enabled: true
   logging: "on"
 
+  instrument_patterns:
+    - pattern: ".*"
+      enabled: true
+
+  ignore_patterns: []
+
   http_filtering:
     enabled: true
     ignore_routes:

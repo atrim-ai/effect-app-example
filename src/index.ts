@@ -2,6 +2,7 @@ import { HttpRouter, HttpServer, HttpServerResponse } from "@effect/platform"
 import { NodeHttpServer, NodeRuntime } from "@effect/platform-node"
 import { Effect, Layer, Fiber } from "effect"
 import { createServer } from "node:http"
+import { UnifiedTracingLive } from "@atrim/instrument-node/effect/auto"
 
 const router = HttpRouter.empty.pipe(
   HttpRouter.get("/", Effect.gen(function* () {
@@ -55,6 +56,7 @@ const HttpLive = router.pipe(
   HttpServer.serve(),
   HttpServer.withLogAddress,
   Layer.provide(ServerLive),
+  Layer.provide(UnifiedTracingLive),
 )
 
 NodeRuntime.runMain(Layer.launch(HttpLive))

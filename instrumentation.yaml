@@ -2,31 +2,19 @@ version: "1.0"
 
 instrumentation:
   enabled: true
-  logging: "on"
-
-  instrument_patterns:
-    - pattern: ".*"
-      enabled: true
-
+  instrument_patterns: []
   ignore_patterns: []
 
-  http_filtering:
-    enabled: true
-    ignore_routes:
-      - pattern: "^/health$"
-
 effect:
-  auto_instrumentation:
-    enabled: true
-    granularity: fiber
-    span_naming:
-      default: "effect.{function}"
-      infer_from_source: true
-    performance:
-      sampling_rate: 1.0
+  auto_extract_metadata: true
 
   operation_tracing:
     enabled: true
+
+    span_naming:
+      include_location: true
+      template: "effect.{op} ({filename}:{line})"
+
     operations:
       - name: all
         include_count: true
@@ -43,4 +31,4 @@ effect:
     endpoint: "http://localhost:4319"
     processor: simple
     headers:
-      x-api-key: atrim_internal_tenant_000000000002
+      x-api-key: "atrim_internal_tenant_000000000002"

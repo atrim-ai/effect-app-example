@@ -10,20 +10,20 @@ const router = HttpRouter.empty.pipe(
       Effect.gen(function* () {
         yield* Effect.sleep('5 millis')
         return "task1"
-      })
+      }).pipe(Effect.withSpan('task1'))
     )
     const fiber2 = yield* Effect.fork(
       Effect.gen(function* () {
         yield* Effect.sleep('10 millis')
         return "task2"
-      })
+      }).pipe(Effect.withSpan('task2'))
     )
 
     yield* Fiber.join(fiber1)
     yield* Fiber.join(fiber2)
 
     return HttpServerResponse.text("Hello, Effect!")
-  })),
+  }).pipe(Effect.withSpan('GET /'))),
 
   HttpRouter.get("/batch", Effect.gen(function* () {
     const results = yield* Effect.all([
@@ -33,7 +33,7 @@ const router = HttpRouter.empty.pipe(
     ])
 
     return yield* HttpServerResponse.json({ users: results })
-  })),
+  }).pipe(Effect.withSpan('GET /batch'))),
 
   HttpRouter.get("/process", Effect.gen(function* () {
     const items = [1, 2, 3, 4, 5]
@@ -41,11 +41,11 @@ const router = HttpRouter.empty.pipe(
       Effect.gen(function* () {
         yield* Effect.sleep('2 millis')
         return n * 2
-      })
+      }).pipe(Effect.withSpan('processItem', { attributes: { 'item.value': n } }))
     )
 
     return yield* HttpServerResponse.json({ processed })
-  })),
+  }).pipe(Effect.withSpan('GET /process'))),
 
   HttpRouter.get("/health", HttpServerResponse.json({ status: "ok" })),
 )
